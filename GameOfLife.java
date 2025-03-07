@@ -1,13 +1,10 @@
 import java.util.Arrays;
 
 public class GameOfLife implements Board {
-
-    // Integers: 0 or 1 for alive or dead
     private int[][] board;
 
     public GameOfLife(int x, int y)
     {
-        // creates the board with (x) rows and (y) columns.
         board = new int[x][y];
     }
 
@@ -21,16 +18,12 @@ public class GameOfLife implements Board {
     }
 
     public void run(int turns) {
-        // Run the simulation for a number of turns
         for(int i = 0; i <= turns; i++){
             step();
         }
     }
-
-    // Step the simulation forward one turn.
     public void step()
     {
-        // Update the game board, store a 1 if the cell is alive and a 0 otherwise.
         int[][] newBoard = new int[board.length][board[0].length];
         int numNeighbors = 0;
         for(int row = 0; row < board.length; row++){
@@ -50,7 +43,6 @@ public class GameOfLife implements Board {
 
 
     public int countNeighbors(int x, int y) {
-        // use the get(x,y) method to read any board state you need.
         int count = 0;
         int row;
         int col;
@@ -68,9 +60,6 @@ public class GameOfLife implements Board {
         return count;
     }
 
-    // Get a value from the board with "wrap around"
-    // Locations outside the board will loop back into the board.
-    // Ex: -1 will read board.length-1
     public int get(int x, int y) {
         int xLimit = board.length;
         int yLimit= board[0].length;
@@ -80,13 +69,10 @@ public class GameOfLife implements Board {
 
     public int[][] get()
     {
-        // Test helper to get the whole board state
         return board;
     }
 
     public void print(){
-        // Test helper to print the current state
-        // Print the header
         System.out.print("\n ");
         for (int y = 0; y < board[0].length; y++) {
             System.out.print(y%10 + " ");
