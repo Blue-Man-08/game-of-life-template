@@ -21,7 +21,7 @@ public class TestSuite {
 
         // Set the bottom middle neighbor.
         board.set(3, 2, data);
-        pass &= expect(board.countNeighbors(2,2), 2, "Single live cell with two neighbors");
+        pass &= expect(board.countNeighbors(2,3), 2, "Single live cell with two neighbors");
 
         // Test update state
         board.step();
