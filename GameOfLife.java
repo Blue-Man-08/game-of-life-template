@@ -47,8 +47,8 @@ public class GameOfLife implements Board {
         int row;
         int col;
         for(int i = 0; i < 9; i++){
-            row = (i%3)-1;
-            col = (i/3)-1;
+            row = (i % 3) - 1;
+            col = (i / 3) - 1;
             row += x;
             col += y;
             if(get(row,col) == 1){
@@ -63,7 +63,7 @@ public class GameOfLife implements Board {
     public int get(int x, int y) {
         int xLimit = board.length;
         int yLimit= board[0].length;
-        return board[(x+xLimit)%xLimit][(y+yLimit)%yLimit];
+        return board[(x + xLimit) % xLimit][(y + yLimit) % yLimit];
     }
 
 
